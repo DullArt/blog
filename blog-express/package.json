@@ -1,0 +1,23 @@
+{
+  "name": "blog-express",
+  "version": "1.0.0",
+  "description": "an api to my blog ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "csurf": "^1.9.0",
+    "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "moment": "^2.23.0",
+    "pg-promise": "^8.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

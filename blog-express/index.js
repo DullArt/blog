@@ -1,5 +1,5 @@
 var app = require('./config.js');
-const pgp = require('pg-promise')();
+const pgp = require('pg-promise')({capSQL: true});
 
 const cn = {
     host: 'localhost',
@@ -16,7 +16,8 @@ function selectAll(){
 }
 
 function insertNews(news){
-    pgp.helpers.insert(news, null, 'news');
+    var result = pgp.helpers.insert(news, null, 'news');
+    console.log(result);
 }
 
 function getNews(nome){
@@ -24,9 +25,7 @@ function getNews(nome){
 }
 
 function postUsuario(usuario){
-    // return db.one("INSERT INTO usuarios(name, email, password) VALUES($1, $2, crypt($3, gen_salt('bf'))",[name, email, password]);
     pgp.helpers.insert(usuario,['name', 'email','password'], 'usuarios');
-
 }
 
 function getUsuarios(){
